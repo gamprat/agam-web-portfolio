@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// @ts-expect-error - aos/dist/aos.css does not have built-in type declarations for side-effect imports
 import "aos/dist/aos.css";
 
 const geistSans = Geist({
