@@ -12,6 +12,7 @@ html {
 @theme {
   --animate-scroll-left: scroll-left 40s linear infinite;
   --animate-scroll-right: scroll-right 40s linear infinite;
+  --animate-typewriter: typing 5s steps(11, end) infinite, blink 0.75s step-end infinite;
 
   @keyframes scroll-left {
     from { transform: translateX(0); }
@@ -20,6 +21,15 @@ html {
   @keyframes scroll-right {
     from { transform: translateX(-50%); }
     to { transform: translateX(0); }
+  }
+
+  @keyframes typing {
+    0% { width: 0; }
+    40% { width: 100%; } 
+    100% { width: 100%; } 
+  }
+  @keyframes blink {
+    50% { border-color: transparent; }
   }
 }
 

@@ -57,6 +57,18 @@ export default function Navbar() {
               About
             </Link>
             <Link
+              href="#experience"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Experience
+            </Link>
+            <Link
+              href="#tech-stack"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Tech Stack
+            </Link>
+            <Link
               href="#projects"
               className="hover:text-white transition-colors duration-200"
             >
@@ -121,6 +133,20 @@ export default function Navbar() {
             className="text-gray-400 hover:text-white transition-colors"
           >
             About
+          </Link>
+          <Link
+            href="#experience"
+            onClick={() => setIsOpen(false)}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            Experience
+          </Link>
+          <Link
+            href="#tech-stack"
+            onClick={() => setIsOpen(false)}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            Tech Stack
           </Link>
           <Link
             href="#projects"
