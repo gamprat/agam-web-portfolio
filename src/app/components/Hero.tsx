@@ -8,7 +8,7 @@ export default function Hero() {
     >
       <div className="flex flex-col items-center justify-center w-full">
         {/* Ukuran font dibuat dinamis: text-5xl di HP, text-7xl di Tablet, text-9xl di Desktop */}
-        <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter uppercase select-none text-white text-center leading-tight">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase select-none text-white text-center leading-tight">
           Agam Pratama<span className="text-purple-500">.</span>
         </h1>
 

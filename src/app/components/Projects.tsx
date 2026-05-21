@@ -5,7 +5,8 @@ export default function Projects() {
     {
       title: "SAF",
       type: "Professional Project",
-      scope: "API Testing • Technical Testing • Ticket Management",
+      scope:
+        "Manual End-to-End Testing • Regression Testing • API Testing • Bug Reporting",
       description:
         "Bertanggung jawab atas pengujian teknis tingkat lanjut termasuk validasi API menggunakan Postman, manajemen tiket isu, serta pembaruan dokumentasi berkala.",
       tech: ["Postman", "API Testing", "Ticket Management"],
@@ -15,7 +16,7 @@ export default function Projects() {
       title: "Salammu",
       type: "Professional Project",
       scope:
-        "Technical Testing • Bug Tracking • Quality Assurance Documentation",
+        "Manual End-to-End Testing • Regression Testing • API Testing • Bug Reporting",
       description:
         "Mengelola siklus pengujian teknis, pelacakan bug, dan penyusunan metrik kualitas pada ekosistem aplikasi Salammu untuk memastikan stabilitas rilis.",
       tech: ["Technical Testing", "Bug Tracking", "QA Docs"],
@@ -24,7 +25,8 @@ export default function Projects() {
     {
       title: "LPPOM Indonesia",
       type: "Professional Project",
-      scope: "QA Testing • 10 Integrated Modules Management",
+      scope:
+        "Manual Testing • Automation Testing • Katalon Studio • Bug Reporting",
       description:
         "Bertindak sebagai QA Tester yang mengelola dan mengeksekusi skenario pengujian komprehensif untuk 10 modul sistem yang saling terintegrasi secara masif.",
       tech: ["Module Testing", "System Integration", "Test Scenarios"],
@@ -79,7 +81,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover opacity-30 grayscale group-hover:scale-105 group-hover:opacity-40 group-hover:grayscale-0 transition-all duration-700"
+                  className="object-cover opacity-40 grayscale-0 md:opacity-30 md:grayscale group-hover:scale-105 group-hover:opacity-40 group-hover:grayscale-0 transition-all duration-700"
                 />
                 {/* Efek Gradasi Gelap ke Atas agar Teks di Bawah Selalu Terbaca */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent" />

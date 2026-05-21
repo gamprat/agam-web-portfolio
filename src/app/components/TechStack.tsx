@@ -102,7 +102,7 @@ export default function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="relative z-10 min-h-screen py-32 px-6 md:px-12 bg-[#050505] overflow-hidden"
+      className="relative z-10 min-h-screen py-32 px-6 md:px-12 overflow-hidden"
     >
       {/* Efek Garis Latar Belakang Digital Minimalis */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
@@ -127,26 +127,29 @@ export default function TechStack() {
               key={index}
               data-aos="fade-up"
               data-aos-delay={index * 50}
-              className={`group relative bg-[#090909]/90 border border-white/5 rounded-2xl p-6 transition-all duration-500 ease-out hover:-translate-y-2 hover:bg-[#0d0d0d] flex flex-col justify-between h-[190px] cursor-pointer overflow-hidden ${tech.color}`}
+              // CATATAN QA: 'hover:-translate-y-2' diubah menjadi 'md:hover:-translate-y-2'
+              // agar tidak membuat scrolling di HP terasa kagok/tersendat
+              className={`group relative bg-[#090909]/90 border border-white/5 rounded-2xl p-6 transition-all duration-500 ease-out md:hover:-translate-y-2 hover:bg-[#0d0d0d] flex flex-col justify-between h-[190px] cursor-pointer overflow-hidden ${tech.color}`}
             >
-              {/* Efek Bias Cahaya Masking Internal */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              {/* Baris Atas: Ikon Berputar Lambat & Label Level */}
               <div className="flex justify-between items-start">
                 <div
-                  className={`w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center justify-center text-2xl font-black font-mono transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:bg-white/[0.04] ${tech.textColor}`}
+                  className={`w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:bg-white/[0.04] md:group-hover:rotate-6 ${tech.textColor}`}
                 >
                   {tech.icon}
                 </div>
-                <span className="text-[9px] font-mono text-gray-600 border border-white/5 bg-white/[0.01] px-2.5 py-1 rounded-full uppercase tracking-wider group-hover:text-white group-hover:border-white/20 transition-all duration-300">
+
+                {/* CATATAN QA: Mengubah 'group-hover:text-white' menjadi 'text-gray-400 md:text-gray-600 md:group-hover:text-white' */}
+                {/* Ini membuat label 'Advanced/Intermediate' langsung terang dan terbaca jelas di HP! */}
+                <span className="text-[9px] font-mono text-gray-400 md:text-gray-600 border border-white/10 md:border-white/5 bg-white/[0.03] md:bg-white/[0.01] px-2.5 py-1 rounded-full uppercase tracking-wider md:group-hover:text-white md:group-hover:border-white/20 transition-all duration-300">
                   {tech.level}
                 </span>
               </div>
 
-              {/* Baris Bawah: Nama Tools & Spesialisasi QA */}
               <div className="relative z-10 mt-4">
-                <h3 className="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors duration-300">
+                {/* Di HP teks otomatis berwarna ungu muda lembut agar kontras, di PC berubah saat hover */}
+                <h3 className="text-lg font-bold text-white tracking-tight md:group-hover:text-purple-300 transition-colors duration-300">
                   {tech.name}
                 </h3>
                 <p className="text-xs font-mono text-gray-500 mt-1 uppercase tracking-wider">

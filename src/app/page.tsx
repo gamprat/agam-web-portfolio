@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollingBackground from "@/app/components/ScrollingBackground";
+import SpotlightBackground from "./components/SpotlightBackground";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -24,7 +25,9 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen">
-      <ScrollingBackground />
+      {/* <ScrollingBackground /> */}
+
+      <SpotlightBackground/>
 
       <Navbar/>
 
