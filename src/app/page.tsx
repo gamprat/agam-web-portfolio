@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
+import BugGimmick from "./components/BugGimmick";
 
 import { useEffect } from "react";
 import Aos from "aos";
@@ -27,21 +28,23 @@ export default function Home() {
     <main className="relative min-h-screen">
       {/* <ScrollingBackground /> */}
 
-      <SpotlightBackground/>
+      <SpotlightBackground />
 
-      <Navbar/>
+      <Navbar />
 
-      <Hero/>
+      <Hero />
 
-      <About/>
+      <About />
 
-      <Experience/>
+      <Experience />
 
-      <TechStack/>
+      <TechStack />
 
-      <Projects/>
+      <Projects />
 
-      <Contact/>
+      <Contact />
+
+      <BugGimmick />
     </main>
   );
 }
