@@ -32,7 +32,7 @@ export default function SpotlightBackground() {
       {/* 2. JARING GRID ABSTRAK (Lebih tegas di atas, memudar di bawah) */}
       {/* Kita naikkan opasitas garisnya dari #ffffff02 ke #ffffff06 agar lebih terlihat */}
       <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:50px_50px] z-10"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:50px_50px] z-10 animate-grid-float"
         style={{
           // Masking murni CSS: Membuat grid hanya tajam di 30% area atas, lalu hilang perlahan ke bawah
           maskImage:
