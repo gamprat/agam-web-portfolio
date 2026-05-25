@@ -4,7 +4,7 @@ export default function Experience() {
   const experiences = [
     {
       role: "Software Tester",
-      company: "Lakumanah Digital",
+      company: "Lakumanah",
       period: "Apr 2026 - Mei 2026",
       description:
         "Melakukan pengujian manual end-to-end secara intensif pada aplikasi Lakumanah Digital, termasuk pengujian fungsionalitas integrasi payment gateway dan pelaporan bug secara terstruktur.",

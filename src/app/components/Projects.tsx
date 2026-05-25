@@ -3,52 +3,43 @@ import Image from "next/image";
 export default function Projects() {
   const projectList = [
     {
-      title: "SAF",
+      title: "SAF Original +",
       type: "Professional Project",
-      scope:
-        "Manual End-to-End Testing • Regression Testing • API Testing • Bug Reporting",
       description:
-        "Bertanggung jawab atas pengujian teknis tingkat lanjut termasuk validasi API menggunakan Postman, manajemen tiket isu, serta pembaruan dokumentasi berkala.",
-      tech: ["Postman", "API Testing", "Ticket Management"],
+        "Platform ekosistem media digital terintegrasi yang menyajikan konten edukasi, serial kajian Islam multimedial, web series, serta manajemen event bertema pengembangan diri dan gaya hidup Islami.",
+      tech: ["Manual End-to-End Testing", "Regression Testing", "API Testing", "Bug Reporting", "Postman", "Ticket Management"],
       image: "/images/cover_saf.png",
     },
     {
       title: "Salammu",
       type: "Professional Project",
-      scope:
-        "Manual End-to-End Testing • Regression Testing • API Testing • Bug Reporting",
       description:
-        "Mengelola siklus pengujian teknis, pelacakan bug, dan penyusunan metrik kualitas pada ekosistem aplikasi Salammu untuk memastikan stabilitas rilis.",
-      tech: ["Technical Testing", "Bug Tracking", "QA Docs"],
+        "Aplikasi resmi yang diinisiasi oleh LPCR PP Muhammadiyah sebagai platform informasi warga Muhammadiyah, dengan kompleksitas fitur geolokasi ranting, streaming kajian, e-commerce, serta gerbang pembayaran iuran digital.",
+      tech: ["Manual End-to-End Testing", "Regression Testing", "API Testing", "Bug Reporting", "Technical Testing", "Bug Tracking", "QA Docs"],
       image: "/images/cover_salammu.png",
     },
     {
       title: "LPPOM Indonesia",
       type: "Professional Project",
-      scope:
-        "Manual Testing • Automation Testing • Katalon Studio • Bug Reporting",
       description:
-        "Bertindak sebagai QA Tester yang mengelola dan mengeksekusi skenario pengujian komprehensif untuk 10 modul sistem yang saling terintegrasi secara masif.",
-      tech: ["Module Testing", "System Integration", "Test Scenarios"],
+        "Sistem sertifikasi halal terintegrasi berskala nasional yang menjembatani proses audit, validasi data, hingga penerbitan ketetapan halal resmi.",
+      tech: ["Manual Testing", "Automation Testing", "Katalon Studio", "Bug Reporting", "Module Testing", "System Integration", "Test Scenarios"],
       image: "/images/cover_lppom.png",
     },
     {
       title: "Lakumanah",
       type: "Professional Project",
-      scope:
-        "Manual End-to-End Testing • Payment Gateway Integration • Bug Reporting",
       description:
-        "Melakukan pengujian menyeluruh (E2E) pada alur transaksi dan integrasi gerbang pembayaran, serta menyusun dokumentasi pengujian yang komprehensif.",
-      tech: ["Manual Testing", "E2E Testing", "Payment Gateway"],
+        "Platform komunitas dan gerakan pelestarian seni memanah tradisional Jawa (Jemparingan) yang memadukan filosofi budaya leluhur dengan fungsionalitas teknologi modern lintas generasi.",
+      tech: ["Manual End-to-End Testing", "Payment Gateway Integration", "Bug Reporting", "Manual Testing", "E2E Testing", "Payment Gateway"],
       image: "/images/cover_lakumanah.png",
     },
     {
       title: "Sanbercode QA Bootcamp",
       type: "Bootcamp Project",
-      scope: "Fundamental SQA • Automation Testing Frameworks",
       description:
-        "Proyek intensif membangun arsitektur pengujian otomatis dari dasar, mencakup pembuatan script otomatisasi pengujian fungsional dan end-to-end.",
-      tech: ["Cypress", "Automation Testing", "Katalon Studio"],
+        "Proyek akhir (Final Project) sebagai bentuk implementasi langsung dari seluruh materi yang dipelajari selama mengikuti bootcamp Quality Assurance.",
+      tech: ["Fundamental SQA", "Automation Testing Frameworks", "Cypress", "Automation Testing", "Katalon Studio"],
       image: "/images/cover_sanbercode.png",
     },
   ];
@@ -105,9 +96,9 @@ export default function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-[11px] font-mono text-gray-400 mt-1 mb-3 leading-relaxed">
+                {/* <p className="text-[11px] font-mono text-gray-400 mt-1 mb-3 leading-relaxed">
                   Scope: {project.scope}
-                </p>
+                </p> */}
 
                 <p className="text-sm text-gray-300 leading-relaxed font-light mb-6 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-[100px] transition-all duration-500 overflow-hidden">
                   {project.description}

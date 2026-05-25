@@ -1,14 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import {
   SiCypress,
   SiPostman,
   SiSelenium,
   SiJira,
   SiGithub,
+  SiGitlab,
+  SiMysql,
 } from "react-icons/si";
 
 export default function TechStack() {
+  const [showAll, setShowAll] = useState(false);
+
   const techTools = [
     {
       name: "Katalon Studio",
@@ -54,17 +59,6 @@ export default function TechStack() {
       textColor: "text-[#49c595]",
     },
     {
-      name: "Postman",
-      category: "API Testing",
-      level: "Advanced",
-      color:
-        "hover:shadow-[0_0_30px_rgba(255,108,55,0.25)] hover:border-[#ff6c37]/50",
-      icon: (
-        <SiPostman className="w-7 h-7 transition-transform duration-500 group-hover:scale-110" />
-      ),
-      textColor: "text-[#ff6c37]",
-    },
-    {
       name: "Selenium",
       category: "Web Automation",
       level: "Intermediate",
@@ -76,8 +70,19 @@ export default function TechStack() {
       textColor: "text-[#00b500]",
     },
     {
+      name: "Postman",
+      category: "API Testing",
+      level: "Advanced",
+      color:
+        "hover:shadow-[0_0_30px_rgba(255,108,55,0.25)] hover:border-[#ff6c37]/50",
+      icon: (
+        <SiPostman className="w-7 h-7 transition-transform duration-500 group-hover:scale-110" />
+      ),
+      textColor: "text-[#ff6c37]",
+    },
+    {
       name: "Jira",
-      category: "Bug Tracking & Agile",
+      category: "Bug Tracking & Task Management",
       level: "Advanced",
       color:
         "hover:shadow-[0_0_30px_rgba(0,82,204,0.25)] hover:border-[#0052cc]/50",
@@ -96,6 +101,28 @@ export default function TechStack() {
         <SiGithub className="w-7 h-7 transition-transform duration-500 group-hover:scale-110" />
       ),
       textColor: "text-white",
+    },
+    {
+      name: "GitLab",
+      category: "Version Control & CI/CD Pipeline",
+      level: "Advanced",
+      color:
+        "hover:shadow-[0_0_30px_rgba(252,109,38,0.25)] hover:border-[#fc6d26]/50",
+      icon: (
+        <SiGitlab className="w-7 h-7 transition-transform duration-500 group-hover:scale-110" />
+      ),
+      textColor: "text-[#fc6d26]",
+    },
+    {
+      name: "MySQL",
+      category: "Database & Query Testing",
+      level: "Intermediate",
+      color:
+        "hover:shadow-[0_0_30px_rgba(0,117,143,0.25)] hover:border-[#00758f]/50",
+      icon: (
+        <SiMysql className="w-9 h-9 transition-transform duration-500 group-hover:scale-110" />
+      ),
+      textColor: "text-[#00758f]",
     },
   ];
 
@@ -122,42 +149,51 @@ export default function TechStack() {
 
         {/* Grid Kartu Interaktif */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {techTools.map((tech, index) => (
-            <div
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={index * 50}
-              // CATATAN QA: 'hover:-translate-y-2' diubah menjadi 'md:hover:-translate-y-2'
-              // agar tidak membuat scrolling di HP terasa kagok/tersendat
-              className={`group relative bg-[#090909]/90 border border-white/5 rounded-2xl p-6 transition-all duration-500 ease-out md:hover:-translate-y-2 hover:bg-[#0d0d0d] flex flex-col justify-between h-[190px] cursor-pointer overflow-hidden ${tech.color}`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          {techTools.map((tech, index) => {
+            const isHiddenOnMobile = !showAll && index >= 4;
 
-              <div className="flex justify-between items-start">
-                <div
-                  className={`w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:bg-white/[0.04] md:group-hover:rotate-6 ${tech.textColor}`}
-                >
-                  {tech.icon}
+            return (
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
+                className={`group relative bg-[#090909]/90 border border-white/5 rounded-2xl p-6 transition-all duration-500 ease-out md:hover:-translate-y-2 hover:bg-[#0d0d0d] flex flex-col justify-between h-[190px] cursor-pointer overflow-hidden ${tech.color} ${
+                  isHiddenOnMobile ? "hidden md:flex" : "flex"
+                }`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                <div className="flex justify-between items-start">
+                  <div
+                    className={`w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:bg-white/[0.04] md:group-hover:rotate-6 ${tech.textColor}`}
+                  >
+                    {tech.icon}
+                  </div>
+                  <span className="text-[9px] font-mono text-gray-400 md:text-gray-600 border border-white/10 md:border-white/5 bg-white/[0.03] md:bg-white/[0.01] px-2.5 py-1 rounded-full uppercase tracking-wider md:group-hover:text-white md:group-hover:border-white/20 transition-all duration-300">
+                    {tech.level}
+                  </span>
                 </div>
 
-                {/* CATATAN QA: Mengubah 'group-hover:text-white' menjadi 'text-gray-400 md:text-gray-600 md:group-hover:text-white' */}
-                {/* Ini membuat label 'Advanced/Intermediate' langsung terang dan terbaca jelas di HP! */}
-                <span className="text-[9px] font-mono text-gray-400 md:text-gray-600 border border-white/10 md:border-white/5 bg-white/[0.03] md:bg-white/[0.01] px-2.5 py-1 rounded-full uppercase tracking-wider md:group-hover:text-white md:group-hover:border-white/20 transition-all duration-300">
-                  {tech.level}
-                </span>
+                <div className="relative z-10 mt-4">
+                  <h3 className="text-lg font-bold text-white tracking-tight transition-colors duration-300">
+                    {tech.name}
+                  </h3>
+                  <p className="text-xs font-mono text-gray-500 mt-1 uppercase tracking-wider">
+                    {tech.category}
+                  </p>
+                </div>
               </div>
+            );
+          })}
+        </div>
 
-              <div className="relative z-10 mt-4">
-                {/* Di HP teks otomatis berwarna ungu muda lembut agar kontras, di PC berubah saat hover */}
-                <h3 className="text-lg font-bold text-white tracking-tight md:group-hover:text-purple-300 transition-colors duration-300">
-                  {tech.name}
-                </h3>
-                <p className="text-xs font-mono text-gray-500 mt-1 uppercase tracking-wider">
-                  {tech.category}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="text-center mt-12 md:hidden" data-aos="fade-up">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-3 bg-[#090909] border border-white/10 text-xs font-mono uppercase tracking-widest text-gray-400 rounded-xl hover:text-white hover:border-purple-500/50 transition-all duration-300 cursor-pointer active:scale-95"
+          >
+            {showAll ? "▲ Hide Others" : "▼ View Others Tools"}
+          </button>
         </div>
       </div>
     </section>
